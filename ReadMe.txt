@@ -1,1 +1,1 @@
-Cocos Creator ÖÐScrollViewÇ¶Ì×µÄ½â¾ö°ì·¨¡£
+Cocos Creator ä¸­ScrollViewåµŒå¥—çš„è§£å†³åŠžæ³•ã€‚
