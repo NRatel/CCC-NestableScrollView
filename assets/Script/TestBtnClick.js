@@ -23,7 +23,7 @@ cc.Class({
         if (eventData.target == this.m_Btn_B.node) {
             cc.log("OnBtnClick B");
         }
-        if (eventData.target == this.m_Btn_B.node) {
+        if (eventData.target == this.m_Btn_C.node) {
             cc.log("OnBtnClick C");
         }
         if (eventData.target == this.m_Btn_GiveStar.node){
