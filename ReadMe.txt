@@ -1,4 +1,4 @@
-﻿Cocos Creator 中ScrollView嵌套的解决办法。
+﻿Cocos Creator(v1.9.1) 中ScrollView嵌套的解决办法。
 
 
 使用方法：
