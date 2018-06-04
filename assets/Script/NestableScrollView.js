@@ -25,7 +25,7 @@ let NestableScrollView = cc.Class({
         }
     },
 
-    //检查实际与计划方向一致性
+    //检查实际与计划方向的一致性
     _isDifferentBetweenSettingAndPlan() {
         if (NestableScrollView.s_PlanDir == 0) {
             return false;
@@ -42,7 +42,7 @@ let NestableScrollView = cc.Class({
         return true;
     },
 
-    //是否为嵌套滑动视图的子物体
+    //是否为子物体
     _isHisChild(child, undeterminedParent) {
         if (child == undeterminedParent) {
             return true;
@@ -68,7 +68,7 @@ let NestableScrollView = cc.Class({
         return false;
     },
 
-    //#region override method
+    //#region 重写cc.ScrollView的方法
     _hasNestedViewGroup: function (event, captureListeners) {
         if (event.eventPhase !== cc.Event.CAPTURING_PHASE) return;
 
