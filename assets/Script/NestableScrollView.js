@@ -60,7 +60,8 @@ let NestableScrollView = cc.Class({
     //是否为嵌套滑动视图的子物体
     _findInnerSvOfTarget(target) {
         for (let i = 0; i < this.m_InnerScrollViews.length; i++) {
-            if (this._isHisChild(target, this.m_InnerScrollViews[i].node)) {
+            let isHisChild = this._isHisChild(target, this.m_InnerScrollViews[i].node);
+            if (isHisChild) {
                 return this.m_InnerScrollViews[i];
             }
         }
@@ -101,6 +102,7 @@ let NestableScrollView = cc.Class({
 
         //在嵌套滚动视图上滑动时, 设置开始时滑动的方向为计划方向
         let targetParentSv = this._findInnerSvOfTarget(event.target);
+
         if (this.m_HasInner && targetParentSv != null) {
             if (targetParentSv.vertical || targetParentSv.horizontal) {
                 if (NestableScrollView.s_PlanDir == 0 && cc.pLength(deltaMove) > 7) {
@@ -125,7 +127,7 @@ let NestableScrollView = cc.Class({
 
         //保证 只在首次截获事件的ScrollView中取消子物体事件
         //(脚本运行在父ScrollView上 && 事件目标不在嵌套的子ScrollView上) || (脚本运行在子ScrollView的)
-        if ((this.m_HasInner && this._findInnerSvOfTarget(event.target) == null) || (!this.m_HasInner)) {
+        if ((this.m_HasInner && targetParentSv == null) || (!this.m_HasInner)) {
             if (cc.pLength(deltaMove) > 7) {
                 if (!this._touchMoved && event.target !== this.node) {
                     var cancelEvent = new cc.Event.EventTouch(event.getTouches(), event.bubbles);
