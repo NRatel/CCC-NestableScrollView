@@ -122,8 +122,6 @@ let NestableScrollView = cc.Class({
 
         //保证 只在首次截获事件的ScrollView中取消子物体事件
         //(脚本运行在父ScrollView上 && 事件目标不在嵌套的子ScrollView上) || (脚本运行在子ScrollView的)
-
-        cc.log("this._isInnersChild(event.target): ", this._isInnersChild(event.target));
         if ((this.m_HasInner && !this._isInnersChild(event.target)) || (!this.m_HasInner)) {
             if (cc.pLength(deltaMove) > 7) {
                 if (!this._touchMoved && event.target !== this.node) {
