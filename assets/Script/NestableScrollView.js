@@ -9,8 +9,8 @@ let NestableScrollView = cc.Class({
     },
 
     properties: {
-        m_InnerScrollView: cc.ScrollView,   //挂内嵌的ScrollView
-        m_HasInner: {                       //是否有内嵌的ScrollView((只有两层所以可以认为，有就为父, 否则为子),
+        m_InnerScrollViews: [cc.ScrollView],    //挂内嵌的ScrollView
+        m_HasInner: {                           //是否有内嵌的ScrollView((只有两层所以可以认为，有就为父, 否则为子),
             default: false,
             visible: false,
         },
@@ -18,7 +18,7 @@ let NestableScrollView = cc.Class({
 
     onLoad: function () {
         NestableScrollView.s_PlanDir = 0;
-        if (this.m_InnerScrollView instanceof cc.ScrollView) {
+        if (this.m_InnerScrollViews.length > 0) {
             this.m_HasInner = true;
         } else {
             this.m_HasInner = false;
@@ -31,11 +31,11 @@ let NestableScrollView = cc.Class({
             return false;
         }
 
-        if (NestableScrollView.s_PlanDir == 1 && this.horizontal){
+        if (NestableScrollView.s_PlanDir == 1 && this.horizontal) {
             return false;
         }
 
-        if (NestableScrollView.s_PlanDir == -1 && this.vertical){
+        if (NestableScrollView.s_PlanDir == -1 && this.vertical) {
             return false;
         }
 
@@ -43,17 +43,28 @@ let NestableScrollView = cc.Class({
     },
 
     //是否为嵌套滑动视图的子物体
-    _isInnersChild(node) {
-        if (node == this.m_InnerScrollView.node) {
+    _isHisChild(child, undeterminedParent) {
+        if (child == undeterminedParent) {
             return true;
         }
-        if (node.parent != null) {
-            if (node.parent == this.m_InnerScrollView.node) {
+        if (child.parent != null) {
+            if (child.parent == undeterminedParent) {
                 return true;
             } else {
-                return this._isInnersChild(node.parent);
+                return this._isHisChild(child.parent);
             }
         }
+        return false;
+    },
+
+    //是否为嵌套滑动视图的子物体
+    _isInnersChild(node) {
+        for (let i = 0; i < this.m_InnerScrollViews.length; i++) {
+            if (this._isHisChild(node, this.m_InnerScrollViews[i].node)) {
+                return true;
+            }
+        }
+
         return false;
     },
 

@@ -4,6 +4,7 @@ cc.Class({
     properties: {
         m_Btn_A: cc.Button,
         m_Btn_B: cc.Button,
+        m_Btn_C: cc.Button,
         m_Btn_GiveStar: cc.Button,
     },
 
@@ -11,17 +12,22 @@ cc.Class({
     onLoad: function () {
         this.m_Btn_A.clickEvents.push(this.CreateCCEventHandler(this.node, "TestBtnClick", "OnBtnClick", null));
         this.m_Btn_B.clickEvents.push(this.CreateCCEventHandler(this.node, "TestBtnClick", "OnBtnClick", null));
+        this.m_Btn_C.clickEvents.push(this.CreateCCEventHandler(this.node, "TestBtnClick", "OnBtnClick", null));
         this.m_Btn_GiveStar.clickEvents.push(this.CreateCCEventHandler(this.node, "TestBtnClick", "OnBtnClick", null));
     },
 
     OnBtnClick(eventData) {
         if (eventData.target == this.m_Btn_A.node) {
-            cc.log("this.m_Btn_A");
+            cc.log("OnBtnClick A");
         }
         if (eventData.target == this.m_Btn_B.node) {
-            cc.log("this.m_Btn_B");
+            cc.log("OnBtnClick B");
+        }
+        if (eventData.target == this.m_Btn_B.node) {
+            cc.log("OnBtnClick C");
         }
         if (eventData.target == this.m_Btn_GiveStar.node){
+            cc.log("OnBtnClick GiveStar");
             cc.sys.openURL("https://github.com/NRatel/CCCNestableScrollView"); 
         }
     },
