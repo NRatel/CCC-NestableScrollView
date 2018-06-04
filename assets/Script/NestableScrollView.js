@@ -9,8 +9,8 @@ let NestableScrollView = cc.Class({
     },
 
     properties: {
-        m_InnerScrollView: cc.ScrollView,
-        m_HasInner: {
+        m_InnerScrollView: cc.ScrollView,   //挂内嵌的ScrollView
+        m_HasInner: {                       //是否有内嵌的ScrollView((只有两层所以可以认为，有就为父, 否则为子),
             default: false,
             visible: false,
         },
@@ -18,7 +18,7 @@ let NestableScrollView = cc.Class({
 
     onLoad: function () {
         NestableScrollView.s_PlanDir = 0;
-        if (this.m_InnerScrollView != null) {
+        if (this.m_InnerScrollView instanceof cc.ScrollView) {
             this.m_HasInner = true;
         } else {
             this.m_HasInner = false;
@@ -30,10 +30,16 @@ let NestableScrollView = cc.Class({
         if (NestableScrollView.s_PlanDir == 0) {
             return false;
         }
-        if ((this.horizontal && NestableScrollView.s_PlanDir != 1) || (this.vertical && NestableScrollView.s_PlanDir != -1)) {
-            return true;
+
+        if (NestableScrollView.s_PlanDir == 1 && this.horizontal){
+            return false;
         }
-        return false;
+
+        if (NestableScrollView.s_PlanDir == -1 && this.vertical){
+            return false;
+        }
+
+        return true;
     },
 
     //是否为嵌套滑动视图的子物体
@@ -99,7 +105,6 @@ let NestableScrollView = cc.Class({
             }
         }
 
-        // Do not prevent touch events in inner nodes
         if (!this.cancelInnerEvents) {
             return;
         }
@@ -109,7 +114,6 @@ let NestableScrollView = cc.Class({
         if ((this.m_HasInner && !this._isInnersChild(event.target)) || (!this.m_HasInner)) {
             if (cc.pLength(deltaMove) > 7) {
                 if (!this._touchMoved && event.target !== this.node) {
-                    // Simulate touch cancel for target node
                     var cancelEvent = new cc.Event.EventTouch(event.getTouches(), event.bubbles);
                     cancelEvent.type = cc.Node.EventType.TOUCH_CANCEL;
                     cancelEvent.touch = event.touch;
