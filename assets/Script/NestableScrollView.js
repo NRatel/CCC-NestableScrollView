@@ -102,9 +102,10 @@ let NestableScrollView = cc.Class({
 
         //在嵌套滚动视图上滑动时, 设置开始时滑动的方向为计划方向
         let targetParentSv = this._findInnerSvOfTarget(event.target);
-
         if (this.m_HasInner && targetParentSv != null) {
-            if (targetParentSv.vertical || targetParentSv.horizontal) {
+            let contentSize = targetParentSv.content.getContentSize();
+            let scrollViewSize = targetParentSv.node.getContentSize();
+            if ((targetParentSv.vertical && (contentSize.height > scrollViewSize.height)) || (targetParentSv.horizontal && (contentSize.width > scrollViewSize.width))) {
                 if (NestableScrollView.s_PlanDir == 0 && cc.pLength(deltaMove) > 7) {
                     NestableScrollView.s_PlanDir = Math.abs(deltaMove.x) > Math.abs(deltaMove.y) ? 1 : -1;
                 }
