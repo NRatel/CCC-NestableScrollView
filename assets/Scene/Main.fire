@@ -1090,7 +1090,7 @@
     "_atlas": null
   },
   {
-    "__type__": "68f24mBy4NCp4bz56twJFyg",
+    "__type__": "3770etpsdpK4KiQAwSc8hBh",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1108,8 +1108,7 @@
     "bounceDuration": 1,
     "scrollEvents": [],
     "cancelInnerEvents": true,
-    "m_InnerScrollViews": [],
-    "m_HasInner": false
+    "m_OuterScrollView": null
   },
   {
     "__type__": "cc.Node",
@@ -1619,7 +1618,7 @@
     "_atlas": null
   },
   {
-    "__type__": "68f24mBy4NCp4bz56twJFyg",
+    "__type__": "3770etpsdpK4KiQAwSc8hBh",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1637,8 +1636,7 @@
     "bounceDuration": 1,
     "scrollEvents": [],
     "cancelInnerEvents": true,
-    "m_InnerScrollViews": [],
-    "m_HasInner": false
+    "m_OuterScrollView": null
   },
   {
     "__type__": "cc.Mask",
@@ -1681,7 +1679,7 @@
     "_atlas": null
   },
   {
-    "__type__": "68f24mBy4NCp4bz56twJFyg",
+    "__type__": "cf479BP95xBxbLSGJP029QO",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1707,7 +1705,8 @@
         "__id__": 38
       }
     ],
-    "m_HasInner": false
+    "m_PlanDir": 0,
+    "m_ScrollingInnerSv": null
   },
   {
     "__type__": "cc.Node",
