@@ -1,3 +1,8 @@
+//
+// 可嵌套的ScrollView(已废弃！！！之后会删除)
+// 开源地址：https://github.com/NRatel/CCC-NestableScrollView
+// 挂在分别挂在内外层ScrollView上
+//
 let NestableScrollView = cc.Class({
     extends: cc.ScrollView,
 
