@@ -80,6 +80,7 @@ cc.Class({
 
         //重置计划方向
         this.m_PlanDir = null;
+        this.m_ScrollingInnerSv = null;
 
         var touch = event.touch;
         if (this.content) {
