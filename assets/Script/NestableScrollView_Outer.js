@@ -12,7 +12,7 @@ cc.Class({
             default: null,
             visible: false,
         },
-        m_ScrollingInnerSv: {                                         
+        m_ScrollingInnerSv: {
             default: null,
             visible: false,
         },
@@ -91,6 +91,13 @@ cc.Class({
     },
 
     _onTouchMoved: function (event, captureListeners) {
+        // 答疑：为什么确定 m_ScrollingInnerSv, 不用captureListeners, 而要用this._findScrollingInnerSv？
+        // 因为，在子ScrollView上拖动时, captureListeners中并不包含该子ScrollView本身。
+        // cc.log("----------------------------");
+        // captureListeners.forEach((captureListener) => {
+        //     cc.log(captureListener.name);
+        // });
+
         if (!this.enabledInHierarchy) return;
         if (this._hasNestedViewGroup(event, captureListeners)) return;
 

@@ -66,10 +66,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 47
+        "__id__": 49
       },
       {
-        "__id__": 48
+        "__id__": 50
       }
     ],
     "_prefab": null,
@@ -632,7 +632,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": -60,
-      "y": -470
+      "y": -453
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1160,7 +1160,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": -60,
-      "y": -826
+      "y": -790
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1718,16 +1718,19 @@
     "_children": [
       {
         "__id__": 43
+      },
+      {
+        "__id__": 45
       }
     ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
-        "__id__": 45
+        "__id__": 47
       },
       {
-        "__id__": 46
+        "__id__": 48
       }
     ],
     "_prefab": null,
@@ -1748,8 +1751,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
-      "height": 105
+      "width": 200,
+      "height": 80
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -1757,8 +1760,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -99,
-      "y": -465
+      "x": 0,
+      "y": -539
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1780,6 +1783,80 @@
     "_components": [
       {
         "__id__": 44
+      }
+    ],
+    "_prefab": null,
+    "_id": "30cE+ufilIabMUHnUrUpxK",
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 518,
+      "height": 100
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 93
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_opacityModifyRGB": false,
+    "groupIndex": 0
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 43
+    },
+    "_enabled": true,
+    "_useOriginalSize": false,
+    "_actualFontSize": 36,
+    "_fontSize": 36,
+    "_lineHeight": 50,
+    "_enableWrapText": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_N$string": "如果有用，Star标记一下吧。\n会随着Creator版本更新。",
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 1
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Label",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 42
+    },
+    "_children": [],
+    "_tag": -1,
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 46
       }
     ],
     "_prefab": null,
@@ -1824,7 +1901,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 43
+      "__id__": 45
     },
     "_enabled": true,
     "_useOriginalSize": false,
@@ -1835,7 +1912,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "如果有用，\n给个Star，谢谢",
+    "_N$string": "To Github",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
@@ -1965,7 +2042,7 @@
       "__id__": 35
     },
     "m_Btn_GiveStar": {
-      "__id__": 46
+      "__id__": 48
     }
   }
 ]
