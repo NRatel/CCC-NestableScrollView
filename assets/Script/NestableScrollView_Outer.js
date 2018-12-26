@@ -122,7 +122,6 @@ cc.Class({
             }
         }
 
-        //在InnerScrollView上滑动时, 设置开始时滑动的方向为计划方向
         if (this.content) {
             if (!this.isDifferentBetweenSettingAndPlan(this)) {
                 this._handleMoveLogic(touch);
