@@ -1,4 +1,6 @@
 ﻿Cocos Creator(v1.9.1) 中ScrollView嵌套的解决办法。
+演示：
+![image](https://github.com/NRatel/CCC-NestableScrollView/tree/master/demonstration/demonstration.gif)
 
 使用方法：
 1.用NestableScrollView_Outer和NestableScrollView_Inner代替ScrollView组件，分别挂在需要嵌套的父子ScrollView上；
