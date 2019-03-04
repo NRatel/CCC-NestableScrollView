@@ -23,7 +23,7 @@ cc.Class({
         if (this._hasNestedViewGroup(event, captureListeners)) return;
 
         var touch = event.touch;
-        var deltaMove = cc.pSub(touch.getLocation(), touch.getStartLocation());
+        var deltaMove = touch.getLocation().sub(touch.getStartLocation());
         
         if (this.content) {
             if (!this.m_OuterScrollView.isDifferentBetweenSettingAndPlan(this)) {
@@ -35,7 +35,7 @@ cc.Class({
             return;
         }
 
-        if (cc.pLength(deltaMove) > 7) {
+        if (deltaMove.mag() > 7) {
             if (!this._touchMoved && event.target !== this.node) {
                 var cancelEvent = new cc.Event.EventTouch(event.getTouches(), event.bubbles);
                 cancelEvent.type = cc.Node.EventType.TOUCH_CANCEL;

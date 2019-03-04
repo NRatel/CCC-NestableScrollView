@@ -28,7 +28,7 @@ cc.Class({
         }
         if (eventData.target == this.m_Btn_GiveStar.node){
             cc.log("OnBtnClick GiveStar");
-            cc.sys.openURL("https://github.com/NRatel/CCCNestableScrollView"); 
+            cc.sys.openURL("https://github.com/NRatel/CCC-NestableScrollView"); 
         }
     },
 

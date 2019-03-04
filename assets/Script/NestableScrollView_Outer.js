@@ -102,12 +102,12 @@ cc.Class({
         if (this._hasNestedViewGroup(event, captureListeners)) return;
 
         var touch = event.touch;
-        var deltaMove = cc.pSub(touch.getLocation(), touch.getStartLocation());
+        var deltaMove = touch.getLocation().sub(touch.getStartLocation());
 
         //在滑动时, 设置开始时滑动的方向为计划方向
         //为什么在Outer中做这件事？
         //因为Outer的_onTouchMoved比Inner的早执行, 如果在Inner里做, Outer中就得忽略一帧，体验可能会不好。
-        if (this.m_PlanDir == null && cc.pLength(deltaMove) > 7) {
+        if (this.m_PlanDir == null && deltaMove.mag() > 7) {
             this.m_ScrollingInnerSv = this._findScrollingInnerSv(event.target);
             if (this.m_ScrollingInnerSv != null) {
                 let contentSize = this.m_ScrollingInnerSv.content.getContentSize();
@@ -134,7 +134,7 @@ cc.Class({
 
         //只取消会捕获事件的直接子物体(如Button)上的事件
         if (this.m_ScrollingInnerSv == null) {
-            if (cc.pLength(deltaMove) > 7) {
+            if (deltaMove.mag() > 7) {
                 if (!this._touchMoved && event.target !== this.node) {
                     var cancelEvent = new cc.Event.EventTouch(event.getTouches(), event.bubbles);
                     cancelEvent.type = cc.Node.EventType.TOUCH_CANCEL;
