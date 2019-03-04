@@ -1,4 +1,8 @@
-﻿Cocos Creator(v1.9.1) 中ScrollView嵌套的解决办法。
+﻿Cocos Creator 中ScrollView嵌套的解决办法。
+ 
+现行支持版本：Cocos Creator v2.0+。
+历史版本已放入分支：Cocos Creator v1.9+。
+ 
 演示：
 ![Image](https://github.com/NRatel/CCC-NestableScrollView/tree/master/demonstration/demonstration.gif)
 
