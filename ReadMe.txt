@@ -5,6 +5,7 @@
  
 演示：
 ![Image](https://github.com/NRatel/CCC-NestableScrollView/tree/master/demonstration/demonstration.gif)
+![](https://github.com/NRatel/CCC-NestableScrollView/tree/master/demonstration/demonstration.gif "")
 
 使用方法：
 1.用NestableScrollView_Outer和NestableScrollView_Inner代替ScrollView组件，分别挂在需要嵌套的父子ScrollView上；
