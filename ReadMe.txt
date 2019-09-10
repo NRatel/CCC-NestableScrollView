@@ -1,13 +1,13 @@
-Cocos Creator 中ScrollView嵌套的解决办法。
+Cocos Creator 中ScrollView嵌套的解决办法。  
  
-现行支持版本：Cocos Creator v2.0+。
-历史版本已放入分支：Cocos Creator v1.9+。
-  
-效果预览：    
-![alt text](https://github.com/NRatel/Unity-ListView/blob/master/demonstration/version2.gif)
+现行支持版本：Cocos Creator v2.0+。  
+历史版本已放入分支：Cocos Creator v1.9+。  
+
+演示：    
+![Image](https://github.com/NRatel/CCC-NestableScrollView/tree/master/demonstration/demonstration.gif)  
 
 
-使用方法：
+使用方法：  
 1.用NestableScrollView_Outer和NestableScrollView_Inner代替ScrollView组件，分别挂在需要嵌套的父子ScrollView上；
 2.在NestableScrollView_Outer的 m_InnerScrollViews 属性上设置子数量，并拖上NestableScrollView_Inner；
 3.分别设定父子ScrollView的方向。(一般不同向, 若同向会都滑动)
