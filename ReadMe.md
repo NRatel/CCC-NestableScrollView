@@ -4,6 +4,7 @@ Cocos Creator 中ScrollView嵌套的解决办法。
 历史版本已放入分支：Cocos Creator v1.9+。  
   
 演示:  
+https://github.com/NRatel/CCC-NestableScrollView/tree/master/demonstration/demonstration.gif  
 ![Image](https://github.com/NRatel/CCC-NestableScrollView/tree/master/demonstration/demonstration.gif)    
 
 
